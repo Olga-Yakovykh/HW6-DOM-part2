@@ -1,29 +1,33 @@
+
 let input = document.querySelector ('#inp');
 let button = document.querySelector ('#btn');
 const ul = document.querySelector('#list');
 
-button.addEventListener ('click', (event) => {
-    let myArray = document.querySelector('input').value.split(',');
+button.addEventListener ('click', () => {
 
-    const arr = myArray;
-
-    let li = ul.innerHTML;
-
+    let result = document.querySelector('#inp').value;
+    const arr =[result];
+    let li = document.createElement('li');
 
     arr.forEach((value) => {
-        
-        li += `<li>  ${value}  </li>`;
 
+        li.innerHTML = `<li> ${value} </li>`;
         ul.append(li);
-
-        ul.innerHTML=li;
-
         input.value = "";
 
-    })  
+    })
+
+
+                                // через createElement
+
+    // let result = document.querySelector('#inp').value;
+    // let elem = document.createElement('li');
+    
+    // elem.innerText = result;
+    // document.querySelector('ul').append(elem);
+    // input.value = "";
 
 });
-
 
 ul.addEventListener('click', (event) => {
 
